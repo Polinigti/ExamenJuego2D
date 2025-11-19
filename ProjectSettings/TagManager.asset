@@ -8,6 +8,7 @@ TagManager:
   - Jugador
   - enemigo
   - meta
+  - SueloMuerte
   layers:
   - Default
   - TransparentFX

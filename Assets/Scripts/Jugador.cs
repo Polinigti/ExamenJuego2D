@@ -64,7 +64,7 @@ public class Jugador : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
 {
-    if (collision.transform.CompareTag("Manzana"))
+    if (collision.transform.CompareTag("moneda"))
     {
         FindObjectOfType<GameManager>().SumarPuntos();
         Destroy(collision.gameObject);
@@ -76,7 +76,7 @@ public class Jugador : MonoBehaviour
     }
 
 
-    if (collision.transform.CompareTag("Meta"))
+    if (collision.transform.CompareTag("meta"))
     {
         SceneManager.LoadScene(3);
     }
