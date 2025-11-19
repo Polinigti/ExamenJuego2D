@@ -1,8 +1,11 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Jugador : MonoBehaviour
 {
     [Header("Animaciones")]
-    public Animator animator;
+    
     
     [Header("Movimiento")]
     private float movimientoX;
@@ -47,7 +50,6 @@ public class Jugador : MonoBehaviour
         if (movimientoX != 0)
         {
             transform.localScale = new Vector3(Mathf.Sign(movimientoX), 1, 1);
-            animator.SetBool("Correr",true);
            
         }
     }
@@ -62,7 +64,7 @@ public class Jugador : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
 {
-    if (collision.transform.CompareTag("Moneda"))
+    if (collision.transform.CompareTag("Manzana"))
     {
         FindObjectOfType<GameManager>().SumarPuntos();
         Destroy(collision.gameObject);
@@ -78,12 +80,5 @@ public class Jugador : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
-}
-}
-}
-
-    void Update()
-    {
-        
     }
 }
